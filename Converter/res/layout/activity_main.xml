@@ -4,23 +4,104 @@
     android:layout_height="match_parent"
     tools:context="${relativePackage}.${activityClass}" >
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="22dp"
-        android:layout_marginTop="39dp"
-        android:text="Distance" />
-
     <EditText
         android:id="@+id/editText1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
-        android:layout_below="@+id/textView1"
-        android:layout_marginTop="35dp"
+        android:layout_alignLeft="@+id/distancetextView"
+        android:layout_below="@+id/distancetextView"
+        android:ems="10"
+        android:inputType="numberDecimal" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editText1"
+        android:layout_below="@+id/editText1" >
+
+        <RadioButton
+            android:id="@+id/radioMiles"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:onClick="handleClick"
+            android:text="Miles" />
+
+        <RadioButton
+            android:id="@+id/radioKilos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="handleClick"
+            android:text="Kilometers" />
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/areatextView2"
+        android:layout_below="@+id/areatextView2"
+        android:ems="10"
+        android:inputType="numberDecimal" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editText2"
+        android:layout_below="@+id/editText2" >
+
+        <RadioButton
+            android:id="@+id/radioFeet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:onClick="handleClick1"
+            android:text="Feet" />
+
+        <RadioButton
+            android:id="@+id/radioMeters"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="handleClick1"
+            android:text="Meters" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/distancetextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="29dp"
+        android:layout_marginTop="19dp"
+        android:text="Distance" />
+
+    <TextView
+        android:id="@+id/areatextView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/radioGroup1"
+        android:layout_below="@+id/radioGroup1"
+        android:layout_marginTop="39dp"
+        android:text="Area" />
+
+    <TextView
+        android:id="@+id/currencytextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/distancetextView"
+        android:layout_below="@+id/radioGroup2"
+        android:layout_marginTop="34dp"
+        android:text="Currency" />
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/currencytextView"
+        android:layout_below="@+id/currencytextView"
         android:ems="10"
         android:inputType="numberDecimal" >
 
@@ -28,25 +109,30 @@
     </EditText>
 
     <RadioGroup
-        android:id="@+id/radioGroup1"
+        android:id="@+id/radioGroup3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/editText1"
-        android:layout_centerVertical="true"
-        android:layout_marginLeft="20dp" >
-
-        <RadioButton
-            android:id="@+id/radio0"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="true"
-            android:text="Miles" />
-
-        <RadioButton
-            android:id="@+id/radio1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Kilometers" />
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/areatextView2" >
     </RadioGroup>
+
+    <RadioButton
+        android:id="@+id/radioDollars"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/radioGroup2"
+        android:layout_below="@+id/editText3"
+        android:checked="true"
+        android:onClick="handleClick2"       
+        android:text="Dollars" />
+
+    <RadioButton
+        android:id="@+id/radioEuros"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/radioDollars"
+        android:layout_below="@+id/radioDollars"
+        android:onClick="handleClick2"
+        android:text="Euros" />
 
 </RelativeLayout>
